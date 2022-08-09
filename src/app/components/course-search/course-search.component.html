@@ -1,0 +1,13 @@
+<h3 style="color: red;">{{message}}</h3>
+<div class="card" style="width: 18rem;">
+    <div class="card-body"  *ngFor="let cour of course1">
+      <h5 class="card-title">Course Details</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+      <p class="card-text">Course ID : {{cour.courseId}}</p>
+      <p class="card-text">Course Name : {{cour.courseName}}</p>
+      <p class="card-text">Course Duration (Hours): {{cour.course_duration}}</p>
+      <p class="card-text">Author: {{cour.authorName}}</p>
+      <!-- <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a> -->
+    </div>
+  </div>

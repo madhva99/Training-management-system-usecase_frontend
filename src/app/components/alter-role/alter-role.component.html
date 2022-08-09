@@ -1,0 +1,34 @@
+<h2 >Admin Settings</h2>
+<table >
+    <tr>
+        <th>User</th>
+        <!-- <th>Action</th> -->
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <th>Modify</th>
+
+    </tr>
+    <tr *ngFor="let users of user">
+        <td >{{users.userName}}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <!-- <td>{{users.role}}</td> -->
+        <td ><select name="" id="" #roleChange>
+            <option value="user" selected >Engineer</option>
+            <option value="manager">Admin</option>
+        </select></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><button class="form-group btn btn-primary" type="submit" (click)="roleUpdate(roleChange.value,users.userName)">Save</button></td>
+
+    </tr>
+</table>

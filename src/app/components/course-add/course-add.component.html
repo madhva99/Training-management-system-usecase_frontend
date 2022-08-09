@@ -1,0 +1,36 @@
+<nav id="nav1" class="navbar navbar-dark bg-dark ">
+    <span class="navbar-text">
+        <h1>Course Addition</h1>
+    </span>
+  </nav>
+  
+    <div id="card1" class="card w-75 text-white bg-secondary mt-3 align-self-center ">
+      <div class="card-body">
+        <h5 class="card-title">Please fill all the fields</h5>
+        <p class="text-danger">{{message}}</p>
+      </div>
+      <form #courseform="ngForm"  >
+        <div class="form-group " >
+          <!-- <label for="exampleInputEmail1">Email address</label> -->
+          <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter the Course name " name="cName" [(ngModel)]="course.courseName" required >
+  
+    </div>
+          
+        
+        <div class="form-group mt-3 ">
+          
+          <input type="number" class="form-control"  placeholder="Enter the Duration" name="duration" [(ngModel)]="course.course_duration" required>
+      
+        </div>
+        <!-- <p class="text-danger">{{message1}}</p> -->
+        <div class="form-group mt-3 ">
+          
+          <input type="text" class="form-control"  placeholder="Enter the Author Name" name="authorName" [(ngModel)]="course.authorName" required>
+      
+        </div>
+        <!-- <p class="text-danger">{{message1}}</p> -->
+        <button class="form-group btn btn-primary mt-3" (click)="addCourse()">Add</button> &nbsp;&nbsp; <button class="form-group btn btn-primary mt-3" routerLink="/progressTrack" routerLinkActive="active">Go Back</button>
+        
+  
+      </form>
+    </div>

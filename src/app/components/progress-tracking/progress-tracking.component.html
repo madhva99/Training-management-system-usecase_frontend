@@ -1,0 +1,54 @@
+<nav id="nav1" class="navbar navbar-dark bg-dark ">
+  <span class="navbar-text">
+
+    <a href="" id="home">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    </a>&nbsp;&nbsp;&nbsp;
+    <a (click)="popUp()" id="prof">
+      <mat-icon>perm_identity</mat-icon>
+    </a>
+    <form #searchForm="ngForm" id="searchBar" style="display: inline;" class="form-inline md-form form-sm mt-0">
+
+      <input id="cNameIp" #searchWord style="display: inline;" type="text" placeholder="Search with course name"
+        aria-label="Search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a (click)="setName(searchWord.value)">
+        <mat-icon>search</mat-icon>
+      </a>
+    </form>
+    <button id="matB" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>reorder</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button routerLink="/addCourse" routerLinkActive="active" mat-menu-item>Add new course</button>
+      <button routerLink="/assigning" routerLinkActive="active" mat-menu-item>Assign Course</button>
+      <button (click)="popUpUser()" routerLinkActive="active" mat-menu-item>Admin settings</button>
+      <button routerLink="/assignView" routerLinkActive="active" mat-menu-item>View assignments</button><hr>
+      <button routerLink="/userLogin" routerLinkActive="active" mat-menu-item><mat-icon id="log">exit_to_app</mat-icon> &nbsp; Logout</button>
+      <!-- <a href="#" routerLink="/addCourse" routerLinkActive="active" role="button">Add New Course</a> -->
+      <!-- <a href="#" routerLink="/assigning" routerLinkActive="active"   role="button">Assign Course</a> -->
+      <!-- <a href="#" routerLink="/assignView" routerLinkActive="active"   role="button">View All Assignments</a> -->
+      <!-- <a href="#" routerLink="/userLogin" routerLinkActive="active"  role="button">Logout</a> -->
+
+    </mat-menu>
+  </span>
+</nav>
+<h2 id="head6">Welcome {{mName}}, courses assigned to employees and progress can be accessed here</h2>
+<div class="container">
+  <div class="row">
+    <div class="row">
+      <div id="card1" class="card border-primary mt-3" style="max-width: 35rem;" *ngFor="let cour of course">
+        <div class=" card-header text-white bg-secondary ">Course Details</div>
+        <div class="card-body text-dark">
+          <div>
+            <h5 class="card-title">About course</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <p class="card-text">Course ID : {{cour.courseId}}</p>
+            <p class="card-text">Course Name : {{cour.courseName}}</p>
+            <p class="card-text">Course Duration (Hours): {{cour.course_duration}}</p>
+            <p class="card-text">Author: {{cour.authorName}}</p>
+            <button class="form-group btn btn-danger mt-3" type="submit"
+              (click)="deleteCourse(cour.courseId)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

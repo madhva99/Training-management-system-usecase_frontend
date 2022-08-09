@@ -1,0 +1,44 @@
+<nav id="nav1" class="navbar navbar-dark bg-dark ">
+    <span class="navbar-text">
+        <h1>Your Assignments</h1>
+    </span>
+  </nav>
+  <h2 class="display-6" id="head"><p>hello {{uName}}, below mentioned are courses assigned to you </p></h2>
+  <table class="table table-striped mt-3 w-75" id="assignTab">
+    <thead class="thead-dark">
+      <tr>
+        <!-- <th scope="col">Trainee Name</th> -->
+        <th scope="col">Course(s) assigned to you</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let cour of courses">
+      <tr >
+        <!-- <td>{{uName}}</td> -->
+        <td>{{cour}}</td>
+        <td><button class="form-group btn btn-primary" type="submit" (click)="getUserCourse(uName,cour)">{{bText}}</button></td>
+      </tr>
+    </tbody>
+</table>
+<!-- <h2 class="display-6 mt-3" id="head"><p>Completed Courses </p></h2>
+<table class="table table-striped mt-3 w-75" id="assignTab">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Course(s) Completed</th>
+      <th scope="col">Date and time</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody  *ngFor="let cour1 of c2name">
+    <tr>
+      
+      <td>{{cour1}}</td>
+      
+   
+      
+    </tr>
+  </tbody>
+</table> -->
+<h2 class="display-6"><a href="#" id="bakbut" routerLink="/userLogin" routerLinkActive="active" class="btn btn-danger btn-lg"  role="button">Logout</a></h2>

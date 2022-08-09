@@ -1,0 +1,28 @@
+<nav id="nav1" class="navbar navbar-dark bg-dark ">
+    <span class="navbar-text">
+        <h1>Course Assignment</h1>
+    </span>
+  </nav>
+  
+    <div id="card1" class="card w-75 text-white bg-secondary mt-3 align-self-center ">
+      <div class="card-body">
+        <h5 class="card-title">Please enter the fields</h5>
+        <p class="text-danger">{{message}}</p>
+      </div>
+      <form #assignmentform="ngForm" (ngSubmit)="assignmentAddition()" >
+        <div class="form-group " >
+          <!-- <label for="exampleInputEmail1">Email address</label> -->
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the Trainee name " name="uName" [(ngModel)]="courseAssign.userName" >
+          
+          
+        </div>
+        <div class="form-group mt-3 ">
+          <!-- <label for="exampleInputPassword1">Password</label> -->
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the course name" name="cName" [(ngModel)]="courseAssign.courseName" >
+        </div>
+        
+        <button class="form-group btn btn-primary mt-3" type="submit">Assign</button> &nbsp;&nbsp;
+        <button class="form-group btn btn-primary mt-3" type="submit" routerLink="/progressTrack" >Back</button>
+  
+      </form>
+    </div>

@@ -1,0 +1,33 @@
+#card1{
+    margin-left: 75px;
+}
+#nav1{
+    padding-left: 15px;
+}
+#head6{
+    margin-left: 15px;
+}
+#searchBar{
+    margin-left: 400px;
+}
+#cNameIp{
+    width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#matB{
+    margin-left: 400px;
+}
+mat-icon{
+    font-size: 32px;
+}
+#home{
+    margin-left: 1px;
+}
+#prof{
+    margin-left: 12px;
+}

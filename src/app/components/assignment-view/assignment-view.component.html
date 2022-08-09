@@ -1,0 +1,51 @@
+<nav id="nav1" class="navbar navbar-dark bg-dark ">
+    <span class="navbar-text">
+        <h1>All Assignments</h1>
+    </span>
+  </nav>
+  <h2 class="display-6" id="head5"><p>Courses Assigned to trainees</p></h2>
+
+<table class="table table-striped mt-3 w-75" id="assignTab">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Trainee Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let assign of courseAssign">
+      <tr>
+        <td>{{assign.userName}}</td>
+        <td>{{assign.courseName}}</td>
+        <td><button class="form-group btn btn-danger" type="submit" (click)="delAssign(assign.uId)">Delete</button></td>
+      </tr>
+    </tbody>
+</table>
+<div id="content" #content>
+<h2 class="display-6" id="head5"><p>Courses &nbsp; completed by trainees</p></h2>
+
+<table class="table mt-3 w-75" id="assignTab">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Trainee Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Date and Time</th>
+        <!-- <th scope="col">Action</th> -->
+      </tr>
+    </thead>
+    <tbody  *ngFor="let assign1 of courseStatus">
+      <tr>
+        <td>{{assign1.uName}}</td>
+        <td>{{assign1.cName}}</td>
+        <td>{{assign1.dateTime| date:'medium' }}</td>
+
+        <!-- <td><button class="form-group btn btn-danger" type="submit" (click)="delAssign(assign.uId)">Delete</button></td> -->
+      </tr>
+    </tbody>
+</table>
+</div>
+  <h2 class="display-6"><a (click)="generateReport()" id="bakbut"  class="btn btn-primary btn-lg"  role="button">Generate Report</a></h2>
+  <h2 class="display-6"><a href="#" routerLink="/assigning" id="bakbut" routerLinkActive="active" class="btn btn-primary btn-lg"  role="button">Assign Course</a></h2>
+  <h2 class="display-6"><a href="#" routerLink="/progressTrack" id="bakbut" routerLinkActive="active" class="btn btn-primary btn-lg"  role="button">Back</a></h2>
+    
+      <!-- <button class="form-group btn btn-primary mt-3 " id="bakbut" type="submit" routerLink="/progressTrack" >Back</button> -->

@@ -1,0 +1,43 @@
+<nav id="nav1" class="navbar navbar-dark bg-dark ">
+  <span class="navbar-text">
+    <h1>Manager Login</h1>
+  </span>
+</nav>
+
+<div id="card1" class="card w-75 text-white bg-secondary mt-3 align-self-center ">
+  <div class="card-body">
+    <h5 class="card-title">Please enter the credentials</h5>
+    <p class="text-danger">{{message}}</p>
+  </div>
+  <form #loginform="ngForm" (ngSubmit)="loginUser()">
+    <div class="form-group ">
+      <!-- <label for="exampleInputEmail1">Email address</label> -->
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter the email " name="email" #em="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        [(ngModel)]="manager.managerEmail">
+      <div *ngIf="em.invalid && (em.dirty || em.touched)" style="color: red;">
+
+        <div *ngIf="em.errors['required']">Email is required</div>
+
+        <div *ngIf="em.errors['pattern']">Email is invalid</div>
+
+      </div>
+
+    </div>
+    <div class="form-group mt-3 ">
+      <!-- <label for="exampleInputPassword1">Password</label> -->
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter the  Password"
+        name="password" #pwd="ngModel" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})"
+        [(ngModel)]="manager.manager_pw">
+    </div>
+    <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" style="color: red;">
+
+      <div *ngIf="pwd.errors['required']">Password is required</div>
+      <div *ngIf="pwd.errors['pattern']">Password is not valid</div>
+
+    </div>
+    <button class="form-group btn btn-primary mt-3" type="submit">Login</button> &nbsp;&nbsp;
+    <button class="form-group btn btn-primary mt-3" type="submit" routerLink="/">Home</button>
+
+  </form>
+</div>
